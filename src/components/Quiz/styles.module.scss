@@ -34,15 +34,14 @@
 }
 
 .correct {
-   border: 2px solid #4caf50;
-   background-color: #e8f5e9;
+   border: 2px solid #4caf50 !important;
+   background-color: #e8f5e9 !important;
 }
 
 .incorrect {
-   border: 2px solid #ff1714;
-   background-color: #ffebee;
+   border: 2px solid #ff1714 !important;
+   background-color: #ffebee !important;
 }
-
 
 .navigationBtn {
    
