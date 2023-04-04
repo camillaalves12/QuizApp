@@ -1,6 +1,8 @@
+import S from './styles.module.scss'
+
 export function Result({correctAnswersCount, quizSize, handleTryAgain}) {
    return (
-      <div>
+      <div className={S.container}>
          <h1>Resultado</h1>
 
          <p>Você acertou {correctAnswersCount} de {quizSize} perguntas!</p>

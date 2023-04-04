@@ -8,21 +8,58 @@ import { ProgressBar } from "../ProgressBar/ProgressBar"
 const QUESTIONS = [
    {
       id: 1,
-      question: 'Qual é o meu nome?',
-      answers: ['Victoria', 'Eloiza', 'Camilla', 'Ana'],
-      correctAnswer: 'Camilla'
+      question: 'Qual é o meu principal objetivo como modelo de linguagem?',
+      answers: 
+      [  'Resolver problemas de uma forma geral, e sobre tudo',
+         'Compreender e gerar linguagem natural de forma mais precisa e flexível',
+         'Melhorar a interação humano-computador',
+         'Nenhuma das opções anteriores'
+      ],
+      correctAnswer: 'Compreender e gerar linguagem natural de forma mais precisa e flexível'
    },
    {
       id: 2,
-      question: 'Qual é a minha idade?',
-      answers: ['12', '26', '21', '23'],
-      correctAnswer: '21'
+      question: 'Qual é o principal tipo de aprendizado que o modelo de linguagem que eu sou utiliza?',
+      answers: 
+      [  'Aprendizado supervisionado',
+         'Aprendizado não supervisionado',
+         'Aprendizado por reforço',
+         'Aprendizado semi-supervisionado'
+      ],
+      correctAnswer: 'Aprendizado não supervisionado'
    },
    {
       id: 3,
-      question: 'O que eu sou?',
-      answers: ['Desenvolvedora', 'Médica', 'nutricionista', 'motorista'],
-      correctAnswer: 'Desenvolvedora'
+      question: 'Qual é o principal desafio enfrentado pelo modelo de linguagem que eu sou?',
+      answers: 
+      [  'Lidar com múltiplos idiomas simultaneamente',
+         'Gerar respostas relevantes e coerentes em diálogos longos',
+         'Compreender sarcasmo e ironia',
+         'Gerar repostas coerentes em diálogos logos com várias informações'
+      ],
+      correctAnswer: 'Gerar respostas relevantes e coerentes em diálogos longos'
+   },
+   {
+      id: 4,
+      question: 'Quais são as principais limitações do modelo de linguagem que eu sou?',
+      answers: 
+      [  'Precisa de grandes quantidades de dados para ser treinado',
+         'Pode gerar informações falsas ou incorretas',
+         'Pode produzir respostas preconceituosas e ofensivas',
+         'Todas as opções anteriores'
+      ],
+      correctAnswer: 'Todas as opções anteriores'
+   },
+   {
+      id: 5,
+      question: 'O que eu sou? ',
+      answers: 
+      [  'Sou um robô treinado para conversar e ser charmoso',
+         'Sou uma inteligência artificial com personalidade',
+         'Sou um assistente virtual sempre pronto para ajudar',
+         'Sou um agente conversacional sarcástico, mas dedicado a ajudar'
+      ],
+      correctAnswer: 'Sou um agente conversacional sarcástico, mas dedicado a ajudar'
    }
 
 ]
@@ -35,7 +72,7 @@ export function Quiz() {
 
    const handleNextQuestion = () => {
       if ( currentQuestionIndex < QUESTIONS.length - 1) {
-         setCurrentQuestionIndex(currentQuestionIndex + 1)
+         setCurrentQuestionIndex(currentQuestionNumber)
       } else {
          setIsTakinQuiz(false)
       }
@@ -73,6 +110,8 @@ export function Quiz() {
    const currentQuestion = QUESTIONS[currentQuestionIndex];     //aqui ele acessa todo o array
    const navigationButtonText = currentQuestionIndex + 1 === quizSize ? 'Ver Resultado' : 'Próxima Pergunta'
 
+   const currentQuestionNumber = currentQuestionIndex + 1;
+
    return(
       <div className={S.container}>
          <div className={S.card}>
@@ -82,10 +121,10 @@ export function Quiz() {
                <div className={S.quiz}>
             <ProgressBar 
               size={quizSize}
-              currentStep={currentQuestionIndex}
+              currentStep={currentQuestionNumber}
             />  
-             <header>
-                  <span>PERGUNTA 1/3</span>
+             <header className={S.quizHeader}>
+                  <span>PERGUNTA { currentQuestionNumber }/ { quizSize }</span>
                   <p>{currentQuestion.question}</p>
                </header>
 
