@@ -1,6 +1,6 @@
 ﻿# QuizApp
 
-Esse projeto foi desenvolvido durante o Curso Dev Sem limites com a finalidade de ultilizarmos/relembrarmos os conceitos básicos de react. Modifiquei algumas coisas e resolvi fazer o Quiz sobre o ChatGpt. 
+### Quiz App é uma aplicação de quiz interativo onde os usuários podem testar seus conhecimentos sobre o ChatGPT, um modelo de linguagem desenvolvido pela OpenAI. O aplicativo consiste em 5 perguntas sobre diferentes aspectos do ChatGPT, e fornece feedback instantâneo sobre a resposta do usuári
 
 
 ## Tecnologias utilizadas
